@@ -14,3 +14,12 @@
 <button [disabled]="checed">button</button>
 
 <img [src]="imgSrc" [title]="imgTitle">
+
+<hr>
+
+<h2>Event Binding</h2>
+
+<button (click)="alertaInfo($event)">Evento</button>
+
+<div (mousemove)="mouseMuve($event)" style="background: red; width: 300px; height: 300px;"></div>
+{{ position.x }} - {{ position.y }}
