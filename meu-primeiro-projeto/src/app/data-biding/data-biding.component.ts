@@ -11,6 +11,10 @@ export class DataBidingComponent implements OnInit {
   public idade: number = 21;
   public maisUm: number = 1;
 
+  public checed: boolean = true;
+  public imgSrc: string = 'https://upload.wikimedia.org/wikipedia/pt/3/3d/Twitter_logo_2012.svg';
+  public imgTitle: string = 'Property Binding';
+
   constructor() { }
 
   ngOnInit(): void {
