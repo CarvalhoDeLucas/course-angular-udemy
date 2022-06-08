@@ -12,7 +12,7 @@ export class DiretivasAtributosComponent implements OnInit {
   public backgroundColor: string = 'red';
 
   public nome: string = '';
-  public list: Array<{nome: string}> = [];
+  public list: Array<{ nome: string }> = [{ nome: 'Lucas' }];
 
   constructor() { }
 
@@ -36,7 +36,7 @@ export class DiretivasAtributosComponent implements OnInit {
   }
 
   public salvar() {
-    this.list.push({nome: this.nome});
+    this.list.push({ nome: this.nome });
     this.nome = '';
   }
 
