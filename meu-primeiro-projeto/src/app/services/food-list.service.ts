@@ -49,6 +49,24 @@ export class FoodListService {
       );
   }
 
+  public foodListEdit(id: number, value: string): Observable<FoodList> {
+    return this.http
+      .put<FoodList>(`${this.url}list-food/${id}`, { nome: value })
+      .pipe(
+        res => res,
+        error => error
+      );
+  }
+
+  public foodListDelete(id: number): Observable<FoodList> {
+    return this.http
+      .delete<FoodList>(`${this.url}list-food/${id}`)
+      .pipe(
+        res => res,
+        error => error
+      );
+  }
+
   public foodListAlert(value: FoodList) {
     return this.emitEvent.emit(value);
   }

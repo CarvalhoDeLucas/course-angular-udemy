@@ -22,7 +22,7 @@ export class FoodListComponent implements OnInit {
       .foodList()
       .subscribe({
         next: (res) => this.foodList = res,
-        error: (err) => console.log(err),
+        error: (err) => console.log(err)
       });
 
     this.foodListService.emitEvent.subscribe(
@@ -31,6 +31,32 @@ export class FoodListComponent implements OnInit {
         return this.foodList.push(res);
       }
     );
+  }
+
+  public foodListEdit(id: number, value: string) {
+    this.foodListService
+    .foodListEdit(id, value)
+    .subscribe({
+      next: (res) => {
+        return console.log(res)
+      },
+      error: (err) => console.log(err)
+    })
+  }
+
+  public foodListDelete(id: number) {
+    return this.foodListService
+      .foodListDelete(id)
+      .subscribe({
+        next: (res) => {
+          this.foodList = this.foodList.filter(
+            item => {
+              return id !== item.id
+            }
+          )
+        },
+        error: (err) => console.log(err)
+      });
   }
 
 }
