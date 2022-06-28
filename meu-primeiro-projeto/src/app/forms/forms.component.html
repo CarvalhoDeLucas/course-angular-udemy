@@ -21,7 +21,7 @@
         Outros:
         <input type="radio" name="sexo" value="Outros" ngModel>
     </label>
-    
+
     <br>
     <br>
     <label>
@@ -40,6 +40,18 @@
         React:
         <input type="checkbox" name="react" ngModel>
     </label>
+    <br>
+    <br>
+
+    <select name="comidas" ngModel>
+        <option value="">Selecionar um alimento</option>
+        <option *ngFor="let item of listComidas" [ngValue]="item">
+            {{ item.comida }} - {{ item.preco }}
+        </option>
+    </select>
+
+    <br>
+    <br>
 </form>
 
 <br>
