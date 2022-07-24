@@ -3,7 +3,7 @@
         Nome:
         <input type="text" formControlName="firstName">
 
-        <span *ngIf=
+        <span class="alert" *ngIf=
             "cadastroForm.get('firstName')?.errors 
             && 
             (cadastroForm.get('firstName')?.touched || cadastroForm.get('firstName')?.dirty)">
