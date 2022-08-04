@@ -20,9 +20,11 @@ export class PokeApiService {
       tap(res => res),
       tap(res => {
         res.results.map((resPokemons: any) => {
+
           this.apiGerPokemons(resPokemons.url).subscribe(
             res => resPokemons.status = res
-          )
+          );
+
         })
       }),
     );
