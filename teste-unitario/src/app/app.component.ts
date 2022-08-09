@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'teste-unitario';
+
+  public soma(val1: number, val2: number) {
+    return val1+val2;
+  }
 }
