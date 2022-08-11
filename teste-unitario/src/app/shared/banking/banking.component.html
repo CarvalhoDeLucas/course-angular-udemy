@@ -14,7 +14,7 @@
 
 <p>
   <br>
-  Carteira: R$ 50
+  Carteira: R$ {{ getCarteira }}
   <br>
   <input type="text" #carteira>
   <button (click)="setDepositar(carteira.value)">Depositar</button>
