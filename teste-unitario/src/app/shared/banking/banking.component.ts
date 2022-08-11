@@ -9,7 +9,7 @@ export class BankingComponent implements OnInit {
 
   private poupanca: number = 10;
   private carteira: number = 10;
-  
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,16 +22,26 @@ export class BankingComponent implements OnInit {
   get getCarteira(): number {
     return this.carteira;
   }
-  public setSacar(value: string): number {
+  public setSacar(value: string): number | undefined {
     const sacar = Number(value);
-    console.log(sacar);
-    return sacar;
+
+    if (isNaN(sacar) || this.poupanca < sacar) {
+      return;
+    }
+
+    this.poupanca -= sacar;
+    return (this.carteira += sacar);
   }
 
-  public setDepositar(value: string): number {
+  public setDepositar(value: string): number | undefined {
     const depositar = Number(value);
-    console.log(depositar);
-    return depositar;
+
+    if (isNaN(depositar) || this.carteira < depositar) {
+      return;
+    }
+
+    this.carteira -= depositar;
+    return (this.poupanca += depositar);
   }
 
 }

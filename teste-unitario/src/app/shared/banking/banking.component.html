@@ -7,6 +7,7 @@
 <p>
   <br>
   Poupança: R$ {{ getPoupanca }}
+  <br>
   <input type="text" #sacar>
   <button (click)="setSacar(sacar.value)">Sacar</button>
 </p>
@@ -14,6 +15,7 @@
 <p>
   <br>
   Carteira: R$ 50
-  <input type="text" #depositar>
-  <button (click)="setDepositar(depositar.value)">Depositar</button>
+  <br>
+  <input type="text" #carteira>
+  <button (click)="setDepositar(carteira.value)">Depositar</button>
 </p>
