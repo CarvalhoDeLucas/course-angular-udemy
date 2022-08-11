@@ -1,0 +1,19 @@
+<p>
+  <strong>Olá Lucas</strong>
+  <br>
+  Ag: 9999, CO: 99999-9
+</p>
+
+<p>
+  <br>
+  Poupança: R$ {{ getPoupanca }}
+  <input type="text" #sacar>
+  <button (click)="setSacar(sacar.value)">Sacar</button>
+</p>
+
+<p>
+  <br>
+  Carteira: R$ 50
+  <input type="text" #depositar>
+  <button (click)="setDepositar(depositar.value)">Depositar</button>
+</p>
