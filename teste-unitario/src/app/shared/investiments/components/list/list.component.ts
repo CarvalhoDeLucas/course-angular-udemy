@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Investiments } from '../model/investiments';
+import { Investiments } from '../../model/investiments';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
     { name: 'nubanck', value: 100 },
     { name: 'inter', value: 100 },
     { name: 'caixa', value: 100 },
-  ]
+  ];
 
   constructor() { }
 
