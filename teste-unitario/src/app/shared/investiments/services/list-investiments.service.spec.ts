@@ -35,10 +35,32 @@ describe('ListInvestimentsService', () => {
   });
 
   afterEach(() => {
-
+    httpTestingController.verify();
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('(U) should be list all investiments', (done) => {
+    service.list().subscribe(
+      (res: Array<Investiments>) => {
+        expect(res[0].name).toEqual('Banco 1');
+        expect(res[0].value).toEqual(100);
+
+        
+        expect(res[4].name).toEqual('Banco 5');
+        expect(res[4].value).toEqual(100);
+
+        //Como estamos usando subscribe temos que usar o done() para
+        //finalizar o teste.
+        done();
+      }
+    );
+
+    const req = httpTestingController.expectOne(URL);
+    req.flush(mockList);
+
+    expect(req.request.method).toEqual('GET');
   });
 });
