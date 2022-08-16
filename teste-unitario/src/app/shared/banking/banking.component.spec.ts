@@ -1,3 +1,7 @@
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListComponent } from '../investiments/components/list/list.component';
 
@@ -10,9 +14,10 @@ describe('BankingComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       // Tem que declarar todos os componentes da página
-      declarations: [ BankingComponent, ListComponent ]
+      declarations: [BankingComponent, ListComponent],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(BankingComponent);
     component = fixture.componentInstance;
@@ -20,7 +25,7 @@ describe('BankingComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy(); 
+    expect(component).toBeTruthy();
   });
 
   it('(U) getPoupanca(): should poupanca = 10', () => {
@@ -44,7 +49,7 @@ describe('BankingComponent', () => {
 
     expect(component.getPoupanca).toEqual(10);
     expect(component.getCarteira).toEqual(50);
-  }); 
+  });
 
   // Interface 
   it('(I) setSacar(): should transfer pouoanca from carteira', () => {
