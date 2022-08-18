@@ -35,7 +35,8 @@ describe('ListComponent', () => {
   });
 
   it('(U) should list investiments', () => {
-    //Ele fia espionando o método
+    //Ele service para espionar, ele vai espionar o método 'list' do service
+    //of() vai retornar o valor q estiver ai dentro
     spyOn(service, 'list').and.returnValue(of(mockList));
 
     component.ngOnInit();
@@ -43,7 +44,7 @@ describe('ListComponent', () => {
 
     expect(service.list).toHaveBeenCalledWith();
     expect(component.investiments.length).toBe(5);
-    
+
     expect(component.investiments[0].name).toEqual('Banco 1');
     expect(component.investiments[0].value).toBe(100);
     expect(component.investiments[4].name).toEqual('Banco 5');
@@ -51,9 +52,17 @@ describe('ListComponent', () => {
   });
 
   it('(I) should list investiments', () => {
-    let investiments = fixture.debugElement.nativeElement.querySelectorAll('.list-itens');
+    //Ele service para espionar, ele vai espionar o método 'list' do service
+    //of() vai retornar o valor q estiver ai dentro
+    spyOn(service, 'list').and.returnValue(of(mockList));
 
-    expect(investiments.length).toBe(4);
-    expect(investiments[0].textContent.trim()).toEqual('Itaú / 100');
+    component.ngOnInit();
+    fixture.detectChanges();
+
+    let investiments = fixture.debugElement.nativeElement.querySelectorAll('.list-itens')
+
+    expect(investiments.length).toBe(5);
+    expect(investiments[0].textContent.trim()).toEqual('Banco 1 / 100');
+    expect(investiments[4].textContent.trim()).toEqual('Banco 5 / 100');
   });
 });
