@@ -9,6 +9,9 @@ import { HttpClient } from '@angular/common/http';
 import { ListInvestimentsService } from './list-investiments.service';
 import { Investiments } from '../model/investiments';
 
+//Mock
+import { MOCK_LIST } from './list-investiments.mock';
+
 describe('ListInvestimentsService', () => {
   let service: ListInvestimentsService;
   let httpTestingController: HttpTestingController;
@@ -16,13 +19,7 @@ describe('ListInvestimentsService', () => {
 
   const URL: string = 'https://raw.githubusercontent.com/troquatte/fake-server/main/investiments-all.json';
 
-  const mockList: Array<Investiments> = [
-    { name: 'Banco 1', value: 100 },
-    { name: 'Banco 2', value: 100 },
-    { name: 'Banco 3', value: 100 },
-    { name: 'Banco 4', value: 100 },
-    { name: 'Banco 5', value: 100 },
-  ]
+  const mockList: Array<Investiments> = MOCK_LIST;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
