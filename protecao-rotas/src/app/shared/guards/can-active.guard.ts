@@ -14,10 +14,8 @@ export class CanActiveGuard implements CanActivate {
       route.queryParams['account'] === 'admin' &&
       route.queryParams['password'] === '1234'
     ) {
-      console.log('True');
       return true;
     }
-    console.log('False');
     return false;
   }
 

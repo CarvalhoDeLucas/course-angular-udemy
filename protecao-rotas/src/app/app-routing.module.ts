@@ -7,6 +7,7 @@ import { AccountComponent } from './shared/account/account.component';
 
 //Guards
 import { CanActiveGuard } from './shared/guards/can-active.guard';
+import { CanDeactiveGuard } from './shared/guards/can-deactive.guard';
 
 const routes: Routes = [{
   path: '',
@@ -15,7 +16,8 @@ const routes: Routes = [{
 {
   path: 'account',
   component: AccountComponent,
-  canActivate: [CanActiveGuard]
+  canActivate: [CanActiveGuard],
+  canDeactivate: [CanDeactiveGuard]
 }];
 
 @NgModule({
