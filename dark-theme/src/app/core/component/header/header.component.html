@@ -1,13 +1,17 @@
 <header>
-    <img src="./assets/Logo.svg" alt="Logo da empresa ">
+  <img src="./assets/Logo.svg" alt="Logo da empresa ">
 
-    <ul>
-        <li>Home</li>
-        <li>Sobre</li>
-        <li>
-            <button type="button">
-                <img src="./assets/moon.svg" alt="Mudar para Dark Theme">
-            </button>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <a [routerLink]="['']">Home</a>
+    </li>
+    <li>
+      <a [routerLink]="['sobre']">Sobre</a>
+    </li>
+    <li>
+      <button type="button" (click)="toggle()">
+        <img src="./assets/{{ icon }}.svg" alt="Mudar para {{ textTheme }}">
+      </button>
+    </li>
+  </ul>
 </header>

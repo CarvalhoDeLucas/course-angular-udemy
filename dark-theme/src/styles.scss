@@ -1,28 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Geostar+Fill&family=Roboto+Slab:wght@100;400;700&family=Roboto:wght@100;300&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    outline: 0;
-    list-style: none;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+
+  button {
+    background: none;
+    cursor: pointer;
+  }
 }
 
 :root {
-    --primary: #1976D2;
-    --body: #FFF;
-    --text-menu: #FFF;
-    --text-body: #4B4B4B;
+  --primary: #1976D2;
+  --body: #FFF;
+  --text-menu: #FFF;
+  --text-body: #4B4B4B;
 }
 
 :root .dark-theme {
-    --primary: #0D47A1;
-    --body: #4B4B4B;
-    --text-menu: #FFF;
-    --text-body: #FFF;
+  --primary: #0D47A1;
+  --body: #4B4B4B;
+  --text-menu: #FFF;
+  --text-body: #FFF;
 }
 
 body {
-    background-color: (--body);
+  background-color: var(--body);
+}
+
+.container {
+    width: 510px;
+    margin: 0 auto;
+
+  h1 {
+    font-weight: 700;
+    font-size: 25px;
+    margin: 50px 0 10px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+  }
+
+  h1,
+  p {
+    color: var(--text-body);
+  }
 }
